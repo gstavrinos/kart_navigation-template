@@ -1,0 +1,14 @@
+name: ROS2 Kart Racing Competition Entry
+
+on:
+  push:
+    branches:
+      - competition
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: gstavrinos/ros2ez
+    steps:
+      - name: Running the official ros2 kart racing competition action
+        uses: gstavrinos/ros2_kart_racing_action@master
