@@ -13,4 +13,4 @@ jobs:
       - name: Running the official ros2 kart racing competition action
         uses: gstavrinos/ros2_kart_racing_action@master
         with: 
-          token: ${GITHUB_TOKEN}
+          token: "${{ secrets.PAT }}"
