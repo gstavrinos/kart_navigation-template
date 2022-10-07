@@ -11,4 +11,6 @@ jobs:
     container: gstavrinos/ros2ez
     steps:
       - name: Running the official ros2 kart racing competition action
-        uses: gstavrinos/ros2_kart_racing_action@docker-action-test
+        uses: gstavrinos/ros2_kart_racing_action@master
+        with: 
+          token: ${GITHUB_TOKEN}
