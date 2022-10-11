@@ -25,14 +25,12 @@ ament_python_install_package(${PROJECT_NAME})
 
 ament_package()
 
-file(GLOB_RECURSE python_scripts scripts/*.py)
-
-if(python_scripts)
-    install(PROGRAMS
-      ${python_scripts} 
+install(DIRECTORY scripts/
       DESTINATION lib/${PROJECT_NAME}
-    )
-endif()
+      FILES_MATCHING
+      PATTERN "*.py"
+      PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ
+)
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY config
