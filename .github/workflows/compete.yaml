@@ -6,7 +6,7 @@ on:
       - competition
 
 jobs:
-  build:
+  test_on_kartland:
     runs-on: ubuntu-latest
     container: gstavrinos/ros2ez
     steps:
@@ -14,3 +14,13 @@ jobs:
         uses: gstavrinos/ros2_kart_racing_action@master
         with: 
           token: "${{ secrets.PAT }}"
+          track: "kartland"
+  test_on_speedpark:
+    runs-on: ubuntu-latest
+    container: gstavrinos/ros2ez
+    steps:
+      - name: Running the official ros2 kart racing competition action
+        uses: gstavrinos/ros2_kart_racing_action@master
+        with: 
+          token: "${{ secrets.PAT }}"
+          track: "speedpark"
