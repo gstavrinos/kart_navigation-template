@@ -8,7 +8,9 @@ on:
 jobs:
   test_on_kartland:
     runs-on: ubuntu-latest
-    container: gstavrinos/ros2ez
+    container: 
+      image: gstavrinos/ros2ez
+      options: --user root
     steps:
       - name: Running the official ros2 kart racing competition action
         uses: gstavrinos/ros2_kart_racing_action@master
@@ -17,7 +19,9 @@ jobs:
           track: "kartland"
   test_on_speedpark:
     runs-on: ubuntu-latest
-    container: gstavrinos/ros2ez
+    container: 
+      image: gstavrinos/ros2ez
+      options: --user root
     steps:
       - name: Running the official ros2 kart racing competition action
         uses: gstavrinos/ros2_kart_racing_action@master
